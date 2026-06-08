@@ -8,6 +8,13 @@ import { DUMMY_TASKS } from './dummy-tasks';
 export default class TasksService {
   private tasks = DUMMY_TASKS;
 
+  constructor() {
+    const tasks = localStorage.getItem("tasks");
+    if (tasks) {
+      this.tasks = JSON.parse(tasks);
+    }
+  }
+
   getUserTasks(userId: string) {
     return this.tasks.filter((t) => t.userId === userId);
   }
@@ -18,9 +25,15 @@ export default class TasksService {
       id: new Date().getTime().toString(),
       userId: userId,
     });
+    this.saveTasks();
   }
 
   removeTask(taskId: string) {
     this.tasks = this.tasks.filter((t) => t.id !== taskId);
+    this.saveTasks();
+  }
+
+  private saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(this.tasks));
   }
 }
