@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from './user-input/user-input.component';
-import type { UserInput } from './user-input/user-input.model';
+import type { UserInput } from './investment.model';
 import { InvestmentResultsComponent } from './investment-results/investment-results.component';
 
 @Component({
@@ -20,6 +20,7 @@ export class AppComponent {
     totalInterest: number;
     totalAmountInvested: number;
   }[]; */
+
   resultsData = signal<{
     year: number;
     interest: number;
