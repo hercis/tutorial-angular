@@ -1,0 +1,28 @@
+<!--@if (!results) {-->
+@if (!results()) {
+<p class="center">investment-results works!</p>
+} @else {
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--@for(r of results; track r.year) {-->
+    @for(r of results(); track r.year) {
+    <tr>
+      <td>{{ r.year }}</td>
+      <td>{{ r.valueEndOfYear | currency:"EUR" }}</td>
+      <td>{{ r.interest | currency }}</td>
+      <td>{{ r.totalInterest | currency }}</td>
+      <td>{{ r.totalAmountInvested | currency }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
