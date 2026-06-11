@@ -3,10 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { type UserInput } from '../investment.model';
 import { InvestmentService } from '../investment.service';
 
-@Component({
+/* @Component({
   selector: 'app-user-input',
   standalone: true,
   imports: [FormsModule],
+  templateUrl: './user-input.component.html',
+  styleUrl: './user-input.component.css',
+}) */
+@Component({
+  selector: 'app-user-input',
+  standalone: false,
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css',
 })

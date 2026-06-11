@@ -5,11 +5,16 @@ import { UserInputComponent } from './user-input/user-input.component';
 import type { UserInput } from './investment.model';
 import { InvestmentResultsComponent } from './investment-results/investment-results.component';
 
-@Component({
+/* @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   imports: [HeaderComponent, UserInputComponent, InvestmentResultsComponent],
+}) */
+@Component({
+  selector: 'app-root',
+  standalone: false,
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
 /*   resultsData?: {
