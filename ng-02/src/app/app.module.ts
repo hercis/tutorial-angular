@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; // imports directives, pipes, ...
+// imports directives, pipes, ...
+// only for the root module, use CommonModule for other modules
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
